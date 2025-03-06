@@ -21,41 +21,41 @@ const RecentPurchases: React.FC<RecentPurchasesProps> = ({
       name: "João Silva",
       location: "São Paulo, SP",
       time: "agora mesmo",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=João",
+      avatar: "/clientes/men(2).jpg",
     },
     {
       name: "Maria Oliveira",
       location: "Rio de Janeiro, RJ",
       time: "2 minutos atrás",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria",
+      avatar: "/clientes/female(2).jpg",
     },
     {
       name: "Pedro Santos",
       location: "Belo Horizonte, MG",
       time: "5 minutos atrás",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Pedro",
+      avatar: "/clientes/men(4).jpg",
     },
     {
       name: "Ana Costa",
       location: "Curitiba, PR",
       time: "7 minutos atrás",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ana",
+      avatar: "/clientes/female(1).jpg",
     },
     {
       name: "Lucas Ferreira",
       location: "Salvador, BA",
       time: "12 minutos atrás",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lucas",
+      avatar: "/clientes/men(5).jpg",
     },
     {
       name: "Juliana Almeida",
       location: "Brasília, DF",
       time: "15 minutos atrás",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Juliana",
+      avatar: "/clientes/female(4).jpg",
     },
   ],
-  interval = 15000, // 15 segundos entre cada notificação
-  showDuration = 5000, // 5 segundos de exibição
+  interval = 20000, // 15 segundos entre cada notificação
+  showDuration = 3000, 
 }) => {
   const [currentPurchase, setCurrentPurchase] = useState<Purchase | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -104,7 +104,7 @@ const RecentPurchases: React.FC<RecentPurchasesProps> = ({
           transition={{ type: "spring", damping: 20 }}
           className="fixed bottom-20 left-4 z-40 max-w-xs"
         >
-          <div className="bg-black rounded-lg shadow-xl border border-blue-800 overflow-hidden">
+          <div className="bg-black rounded-lg shadow-xl border border-black overflow-hidden">
             <div className="flex items-start p-3">
               <div className="relative">
                 <div className="w-10 h-10 rounded-full overflow-hidden mr-3">

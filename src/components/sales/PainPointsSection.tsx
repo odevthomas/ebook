@@ -15,45 +15,45 @@ interface PainPointsSectionProps {
 }
 
 const PainPointsSection = ({
-  title = "Struggling to Break Into Programming?",
-  description = "Many aspiring programmers face these common challenges that prevent them from landing their first job:",
+  title = "Dificuldade para Entrar na Programação?",
+  description = "Muitos aspirantes a programadores enfrentam esses desafios comuns que impedem de conseguir o primeiro emprego:",
   painPoints = [
     {
-      icon: <AlertTriangle className="h-10 w-10 text-amber-500" />,
-      title: "Information Overload",
+      icon: <AlertTriangle className="h-10 w-10 text-blue-600" />,
+      title: "Sobrecarga de Informações",
       description:
-        "Overwhelmed by countless programming languages, frameworks, and conflicting advice on what to learn first.",
+        "Sobrecarregado por diversas linguagens de programação, frameworks e conselhos conflitantes sobre o que aprender primeiro.",
     },
     {
-      icon: <Clock className="h-10 w-10 text-amber-500" />,
-      title: "Wasted Time & Effort",
+      icon: <Clock className="h-10 w-10 text-blue-600" />,
+      title: "Tempo e Esforço Perdidos",
       description:
-        "Spending months on courses that don't teach job-relevant skills or build an impressive portfolio.",
+        "Gastando meses com cursos que não ensinam habilidades relevantes para o trabalho ou não constroem um portfólio impressionante.",
     },
     {
-      icon: <Frown className="h-10 w-10 text-amber-500" />,
-      title: "Rejection After Rejection",
+      icon: <Frown className="h-10 w-10 text-blue-600" />,
+      title: "Rejeições Após Rejeições",
       description:
-        "Applying to dozens of jobs without getting interviews because your resume doesn't stand out.",
+        "Aplicando para dezenas de vagas sem conseguir entrevistas, porque seu currículo não se destaca.",
     },
     {
-      icon: <DollarSign className="h-10 w-10 text-amber-500" />,
-      title: "Expensive Boot Camps",
+      icon: <DollarSign className="h-10 w-10 text-blue-600" />,
+      title: "Bootcamps Caros",
       description:
-        "Considering expensive coding bootcamps without knowing if they'll actually lead to employment.",
+        "Considerando bootcamps caros sem saber se realmente irão levar a uma oportunidade de emprego.",
     },
   ],
-  ctaText = "Get The Solution Now",
+  ctaText = "Encontre a Solução Agora",
   ctaLink = "#solution",
 }: PainPointsSectionProps) => {
   return (
-    <section className="w-full py-16 px-4 md:px-8 bg-slate-100">
+    <section className="w-full py-16 px-4 md:px-8 bg-black text-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             {title}
           </h2>
-          <p className="text-lg text-slate-700 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
             {description}
           </p>
         </div>
@@ -62,13 +62,13 @@ const PainPointsSection = ({
           {painPoints.map((point, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md border border-slate-200 flex flex-col items-start"
+              className="bg-slate-800 p-6 rounded-lg shadow-md border border-slate-700 flex flex-col items-start"
             >
               <div className="mb-4">{point.icon}</div>
-              <h3 className="text-xl font-semibold mb-2 text-slate-900">
+              <h3 className="text-xl font-semibold mb-2 text-white">
                 {point.title}
               </h3>
-              <p className="text-slate-700">{point.description}</p>
+              <p className="text-slate-300">{point.description}</p>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ const PainPointsSection = ({
         <div className="text-center">
           <Button
             size="lg"
-            className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 text-lg rounded-full"
+            className="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-8 py-3 text-lg rounded-full"
             onClick={() => {
               const element = document.querySelector(ctaLink);
               if (element) {

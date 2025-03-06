@@ -13,35 +13,44 @@ const PlatformLogos: React.FC<PlatformLogosProps> = ({
   const platforms = [
     {
       name: "Hotmart",
-      logo: "https://hotmart.s3.amazonaws.com/product_pictures/0f67db09-a334-4345-8e4c-ee4fc3f3e593/logohotmart.png",
+      logo: "https://cdn.brandfetch.io/id_r-vy7Tu/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1740382923073",
     },
     {
-      name: "Udemy",
-      logo: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
+      name: "Braip",
+      logo: "/Plataformas/logo-braip.png",
     },
     {
-      name: "Teachable",
-      logo: "https://teachable.com/static/brand-assets/teachable-logo-black.svg",
+      name: "Monetizze",
+      logo: " https://cdn.brandfetch.io/idjax5iQuU/theme/light/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1737333493052",
     },
     {
-      name: "Gumroad",
-      logo: "https://assets-global.website-files.com/6171b265e5c8aa59b42c3472/618ea7afd990103829d614ff_gumroad-logo.svg",
+      name: "Kiwify",
+      logo: "https://cdn.brandfetch.io/idmENXm_u8/w/400/h/110/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1740680240804",
     },
     {
       name: "Eduzz",
-      logo: "https://eduzz.com/images/logo-eduzz-preta.svg",
+      logo: "https://cdn.brandfetch.io/idU7SCHa8J/w/161/h/45/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1741045013950",
     },
   ];
 
   return (
-    <section className="py-16 bg-gray-900 border-t border-gray-800 relative overflow-hidden">
-      {/* Background light effects */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[30%] left-[20%] w-64 h-64 rounded-full bg-blue-600/20 blur-[100px] animate-pulse"></div>
+    <section className="py-16 bg-black relative overflow-hidden">
+
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        
+        <div className="absolute top-[5%] left-[5%] w-[30rem] h-[30rem] rounded-full bg-blue-600/15 blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-[10%] right-[10%] w-[28rem] h-[28rem] rounded-full bg-indigo-600/15 blur-[120px] animate-pulse" style={{ animationDelay: "2.5s" }}>
+        </div>
+       
+        <div className="absolute top-[40%] right-[25%] w-[25rem] h-[25rem] rounded-full bg-purple-600/15 blur-[120px] animate-pulse" style={{ animationDelay: "4s" }}>
+        </div>
+
         <div
           className="absolute bottom-[40%] right-[25%] w-64 h-64 rounded-full bg-indigo-600/20 blur-[100px] animate-pulse"
           style={{ animationDelay: "3s" }}
-        ></div>
+        >
+          
+        </div>
       </div>
       <div className="max-w-6xl mx-auto px-4">
         <motion.div

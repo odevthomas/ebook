@@ -4,28 +4,28 @@ import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 
 interface TestimonialProps {
-  name: string;
-  role: string;
-  image: string;
-  quote: string;
-  achievement?: string;
-  index?: number;
+  nome: string;
+  cargo: string;
+  imagem: string;
+  depoimento: string;
+  conquista?: string;
+  indice?: number;
 }
 
 const Testimonial = ({
-  name = "John Doe",
-  role = "Junior Developer",
-  image = "https://api.dicebear.com/7.x/avataaars/svg?seed=John",
-  quote = "This e-book completely changed my career trajectory. I went from knowing nothing about programming to landing a job in just 10 months!",
-  achievement = "Hired at a tech startup after 10 months of learning",
-  index = 0,
+  nome = "João Silva",
+  cargo = "Desenvolvedor Júnior",
+  imagem = "/clientes/men(1).jpg",
+  depoimento = "Este e-book mudou completamente a trajetória da minha carreira. Eu passei de não saber nada sobre programação para conseguir um emprego em apenas 10 meses!",
+  conquista = "Contratado em uma startup de tecnologia após 10 meses de aprendizado",
+  indice = 0,
 }: TestimonialProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
+      transition={{ duration: 0.5, delay: indice * 0.2 }}
     >
       <Card
         className="bg-white h-full flex flex-col overflow-hidden transition-all duration-300 relative group"
@@ -36,19 +36,19 @@ const Testimonial = ({
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.2 + 0.2 }}
+            transition={{ duration: 0.3, delay: indice * 0.2 + 0.2 }}
             className="flex items-center mb-4"
           >
             <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
               <img
-                src={image}
-                alt={name}
+                src={imagem}
+                alt={nome}
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
-              <h4 className="font-bold text-lg">{name}</h4>
-              <p className="text-gray-600 text-sm">{role}</p>
+              <h4 className="font-bold tex-white text-lg">{nome}</h4>
+              <p className="text-gray-600 text-sm">{cargo}</p>
             </div>
           </motion.div>
           <div className="flex-1">
@@ -56,21 +56,21 @@ const Testimonial = ({
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+              transition={{ duration: 0.5, delay: indice * 0.2 + 0.3 }}
               className="text-gray-700 italic mb-4"
             >
-              "{quote}"
+              "{depoimento}"
             </motion.p>
-            {achievement && (
+            {conquista && (
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
+                transition={{ duration: 0.5, delay: indice * 0.2 + 0.4 }}
                 className="bg-blue-50 p-3 rounded-md"
               >
                 <p className="text-blue-700 text-sm font-medium">
-                  Achievement: {achievement}
+                  Conquista: {conquista}
                 </p>
               </motion.div>
             )}
@@ -82,40 +82,40 @@ const Testimonial = ({
 };
 
 interface TestimonialsSectionProps {
-  testimonials?: Omit<TestimonialProps, "index">[];
-  title?: string;
-  subtitle?: string;
+  depoimentos?: Omit<TestimonialProps, "indice">[];
+  titulo?: string;
+  subtitulo?: string;
 }
 
 const TestimonialsSection = ({
-  testimonials = [
+  depoimentos = [
     {
-      name: "Maria Silva",
-      role: "Frontend Developer",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria",
-      quote:
-        "I was stuck in a dead-end job before finding this e-book. The practical approach and step-by-step guidance helped me land my dream job in just 9 months!",
-      achievement: "Increased salary by 70% after career change",
+      nome: "Maria Silva",
+      cargo: "Desenvolvedora Frontend",
+      imagem: "/clientes/female(1).jpg", // Substituindo pelo caminho das imagens das
+      depoimento:
+        "Eu estava presa em um emprego sem futuro antes de encontrar este e-book. A abordagem prática e o guia passo a passo me ajudaram a conseguir o emprego dos meus sonhos em apenas 9 meses!",
+      conquista: "Aumentou o salário em 70% após a mudança de carreira",
     },
     {
-      name: "Carlos Mendes",
-      role: "Full Stack Developer",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos",
-      quote:
-        "The roadmap in this e-book is gold! I followed it exactly and went from complete beginner to employed developer in under a year.",
-      achievement: "Hired at a Fortune 500 company",
+      nome: "Carlos Mendes",
+      cargo: "Desenvolvedor Full Stack",
+      imagem: "/clientes/men(2).jpg", // Substituindo pelo caminho das imagens dos
+      depoimento:
+        "O roteiro neste e-book é ouro! Eu segui exatamente e passei de completo iniciante para desenvolvedor contratado em menos de um ano.",
+      conquista: "Contratado em uma empresa da Fortune 500",
     },
     {
-      name: "Ana Ferreira",
-      role: "Backend Developer",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ana",
-      quote:
-        "What sets this e-book apart is the focus on practical projects and job search strategies. It's not just about coding, but how to actually get hired!",
-      achievement: "Built a portfolio that impressed employers",
+      nome: "Ana Ferreira",
+      cargo: "Desenvolvedora Backend",
+      imagem: "/clientes/female(2).jpg", // Substituindo pelo caminho das imagens das
+      depoimento:
+        "O que diferencia este e-book é o foco em projetos práticos e estratégias de busca de emprego. Não se trata apenas de programar, mas de como realmente ser contratado!",
+      conquista: "Construiu um portfólio que impressionou os empregadores",
     },
   ],
-  title = "Success Stories from Real People",
-  subtitle = "Join hundreds of others who transformed their careers with our proven methodology",
+  titulo = "Histórias de Sucesso de Pessoas Reais",
+  subtitulo = "Junte-se a centenas de outras pessoas que transformaram suas carreiras com nossa metodologia comprovada",
 }: TestimonialsSectionProps) => {
   return (
     <section className="py-16 px-4 bg-[#070707]">
@@ -127,13 +127,13 @@ const TestimonialsSection = ({
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">{subtitle}</p>
+          <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">{titulo}</h2>
+          <p className="text-gray-200 max-w-3xl mx-auto">{subtitulo}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Testimonial key={index} {...testimonial} index={index} />
+          {depoimentos.map((depoimento, indice) => (
+            <Testimonial key={indice} {...depoimento} indice={indice} />
           ))}
         </div>
 
@@ -145,21 +145,9 @@ const TestimonialsSection = ({
           className="mt-12 text-center"
         >
           <p className="text-lg font-medium mb-6">
-            Ready to start your own success story?
+            Pronto para começar sua própria história de sucesso?
           </p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium"
-              onClick={() => {
-                const finalCTA = document.querySelector("section:last-of-type");
-                if (finalCTA) {
-                  finalCTA.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              Get Your Copy Now
-            </Button>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>

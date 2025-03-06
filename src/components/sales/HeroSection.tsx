@@ -3,6 +3,13 @@ import { Button } from "../ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 
+// Importando as imagens .jpg diretamente
+import avatar1 from "/public/clientes/avatar(1).jpg";
+import avatar2 from "/public/clientes/avatar(2).jpg";
+import avatar3 from "/public/clientes/avatar(3).jpg";
+import avatar4 from "/public/clientes/avatar(4).jpg";
+import avatar5 from "/public/clientes/avatar(5).jpg";
+
 interface HeroSectionProps {
   title?: string;
   subtitle?: string;
@@ -12,15 +19,15 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  title = "From Zero to First Programming Job",
-  subtitle = "Learn to code and land your dream job in tech within a year - even if you're starting from scratch. Practical strategies and insider knowledge that actually works.",
-  ctaText = "Get Started Now",
-  onCtaClick = () => console.log("CTA clicked"),
+  title = "De Zero a Primeiro Emprego em Programação",
+  subtitle = "Aprenda a programar e conquiste o emprego dos seus sonhos em tecnologia em um ano - mesmo começando do zero. Estratégias práticas e conhecimentos internos que realmente funcionam.",
+  ctaText = "Comece Agora",
+  onCtaClick = () => console.log("CTA clicado"),
   backgroundImage = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
 }) => {
   return (
-    <section className="relative w-full h-[700px] bg-black overflow-hidden">
-      {/* Background light effects */}
+    <section className="relative w-full h-[700px] bg-black overflow-hidden pt-20">
+      {/* Efeitos de luz de fundo */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-5">
         <div className="absolute top-[10%] left-[10%] w-96 h-96 rounded-full bg-blue-600/20 blur-[100px] animate-pulse"></div>
         <div
@@ -28,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
-      {/* Background image with overlay */}
+      {/* Imagem de fundo com sobreposição */}
       <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 0.3 }}
@@ -37,12 +44,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
 
-      {/* Gradient overlay */}
+      {/* Sobreposição em gradiente */}
       <div className="absolute inset-0 z-10 bg-black/80" />
 
-      {/* Content container */}
+      {/* Contêiner de conteúdo */}
       <div className="relative z-20 container mx-auto px-4 h-full flex flex-col md:flex-row justify-center items-center md:items-start max-w-6xl gap-8">
-        {/* Left content */}
+        {/* Conteúdo esquerdo */}
         <div className="flex flex-col justify-center items-start max-w-2xl">
           {/* Badge */}
           <motion.div
@@ -58,10 +65,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             >
               🚀
             </motion.span>
-            Limited Time Offer
+            Oferta por Tempo Limitado
           </motion.div>
 
-          {/* Title */}
+          {/* Título */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,7 +78,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {title}
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Subtítulo */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {subtitle}
           </motion.p>
 
-          {/* CTA Button */}
+          {/* Botão CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,11 +114,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <span className="font-bold text-white bg-blue-600 rounded-full w-5 h-5 inline-flex items-center justify-center mr-1">
                 ✓
               </span>{" "}
-              Risk-free 30-day money-back guarantee
+              Garantia de devolução de dinheiro sem risco em 30 dias
             </motion.p>
           </motion.div>
 
-          {/* Social proof */}
+          {/* Prova social */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,14 +126,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             className="mt-12 flex items-center"
           >
             <div className="flex -space-x-2 mr-4">
-              {[1, 2, 3, 4].map((i) => (
+              {[avatar1, avatar2, avatar3, avatar4, avatar5].map((avatar, i) => (
                 <motion.img
                   key={i}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.9 + i * 0.1 }}
-                  src={`https://api.dicebear.com/7.x/avataaars/svg?seed=person${i}`}
-                  alt="User avatar"
+                  src={avatar}  // Usando as imagens importadas
+                  alt={`Avatar do usuário ${i + 1}`}
                   className="w-8 h-8 rounded-full border-2 border-slate-800"
                 />
               ))}
@@ -137,13 +144,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               transition={{ delay: 1.3 }}
               className="text-gray-300 text-sm font-medium"
             >
-              <span className="font-bold">500+</span> developers have already
-              transformed their careers
+              <span className="font-bold">500+</span> desenvolvedores já
+              transformaram suas carreiras
             </motion.p>
           </motion.div>
         </div>
 
-        {/* Right content - E-book mockup */}
+        {/* Conteúdo direito - Mockup do e-book */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,27 +158,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           className="hidden md:block relative"
         >
           <div className="relative">
-            {/* Book cover with shadow and glow effect */}
-            <div className="relative w-[300px] h-[400px] transform rotate-3 hover:rotate-0 transition-all duration-300">
+            {/* Capa do livro com sombra e efeito de brilho */}
+            <div className="relative w-[300px] h-[500px] transform rotate-3 hover:rotate-0 transition-all duration-300">
               <img
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80"
-                alt="E-book Cover"
+                src="/home-capa.png"
+                alt="Capa do e-book"
                 className="w-full h-full object-cover rounded-lg"
                 style={{
                   filter: "drop-shadow(0 25px 25px rgba(59, 130, 246, 0.5))",
                 }}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">
-                  From Zero to First Programming Job
-                </h3>
-                <p className="text-sm text-blue-100 drop-shadow-lg">
-                  The complete roadmap to landing your dream tech job
-                </p>
-              </div>
             </div>
 
-            {/* Floating elements */}
+            {/* Elementos flutuantes */}
             <motion.div
               className="absolute -top-4 -right-4 bg-blue-600 text-white font-extrabold py-3 px-6 rounded-full shadow-xl border-2 border-blue-800"
               animate={{ y: [0, -10, 0] }}
