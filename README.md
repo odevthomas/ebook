@@ -132,12 +132,3 @@ Caso tenha dúvidas, não hesite em entrar em contato conosco. Nossa equipe est�
 
 **© 2025 Do Zero ao Primeiro Emprego em Programação (Projeto Fictício). Todos os direitos reservados.**
 
-- [Política de Privacidade](#)
-- [Termos de Serviço](#)
-- [Fale Conosco](#)
-
----
-
-**Assistente Virtual:**  
-Olá! Estou aqui para responder suas dúvidas sobre o e-book 'Do Zero ao Primeiro Emprego em Programação'. Como posso ajudar?
-
